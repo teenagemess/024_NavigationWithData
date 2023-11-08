@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MultiplePage</string>
+    <string name="back_button">Kembali</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="next">Lanjut</string>
+    <string name="cancel">Batal</string>
+    <string name="vanilla">The Death Of Peace Of Mind</string>
+    <string name="lemon">POST HUMAN: SURVIVAL ERROR</string>
+    <string name="natural">Finding God Before God Finds Me</string>
+    <string name="milk">HORRORWOOD</string>
+    <string name="lyche">The Silver Scream</string>
+    <string name="order_summary">Ringkasan Order</string>
+    <string name="send">Send Order to Another App</string>
+    <string name="quantity">Jumlah</string>
+    <string name="flavor">Album</string>
+    <string name="subtotal_price">Subtotal : Rp %s</string>
+    <string name="total_price">Total %s</string>
+</resources>
