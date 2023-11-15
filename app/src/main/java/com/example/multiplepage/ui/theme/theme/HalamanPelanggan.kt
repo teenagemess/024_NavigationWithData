@@ -51,7 +51,7 @@ fun HalamanPelanggan(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(30.dp))
-        Row {
+        Row() {
             OutlinedButton(modifier = Modifier.weight(1f),onClick = onCancelButtonClicked) {
                 Text(text = stringResource(R.string.cancel))
             }
