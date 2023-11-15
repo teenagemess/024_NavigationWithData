@@ -53,6 +53,7 @@ fun HalamanSatu(
         Column(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
         ){
+            //RadioButton
             pilihanRasa.forEach { item ->
                 Row(
                     modifier = Modifier.selectable(
@@ -72,6 +73,8 @@ fun HalamanSatu(
                     Text(item)
                 }
             }
+            //RadioButtonEnd
+
             Divider(
                 thickness = dimensionResource(R.dimen.padding_small),
                 modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
@@ -83,6 +86,8 @@ fun HalamanSatu(
                     .weight(1f, false),
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
             ){
+
+                //Jumlah Order
                 OutlinedTextField(
                     value = textJmlBeli,
                     onValueChange = {
@@ -94,6 +99,9 @@ fun HalamanSatu(
                     modifier = Modifier.width(150.dp),
                     label = { Text(text = "Jumlah Order") }
                 )
+                //Jumlah Order End
+
+                //ConfirmButton
                 Button(
                     modifier = Modifier.weight(1f),
                     enabled = textJmlBeli.isNotEmpty(),
@@ -101,6 +109,8 @@ fun HalamanSatu(
                 {
                     Text(stringResource(R.string.confirm))
                 }
+                //ConfirmButtonEnd
+
             }
             Divider(
                 thickness = dimensionResource(R.dimen.padding_small),
@@ -114,9 +124,13 @@ fun HalamanSatu(
                 horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
                 verticalAlignment = Alignment.Bottom
             ){
+                //ButtonCancel
                 OutlinedButton(modifier = Modifier.weight(1f),onClick = onCancelButtonClicked) {
                     Text(text = stringResource(R.string.cancel))
                 }
+                //ButtonCancelEnd
+
+                //ButtonNext
                 Button(
                     modifier = Modifier.weight(1f),
                     enabled = textJmlBeli.isNotEmpty(),
@@ -124,6 +138,8 @@ fun HalamanSatu(
                 {
                     Text(stringResource(R.string.next))
                 }
+                //ButtonNextEnd
+
             }
         }
     }
