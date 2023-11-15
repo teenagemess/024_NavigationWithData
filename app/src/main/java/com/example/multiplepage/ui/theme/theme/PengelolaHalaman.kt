@@ -28,7 +28,8 @@ import com.example.multiplepage.data.Sumberdata
 enum class PengelolaHalaman {
     Home,
     Rasa,
-    Summary
+    Summary,
+    Pelanggan
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -95,6 +96,14 @@ fun EsJumboApp(
                         )
                     })
             }
+
+            composable(PengelolaHalaman.Pelanggan.name) {
+                HalamanPelanggan(onSubmitButtonClicked = {
+                    viewModel.setContact(it)
+                    navController.navigate(PengelolaHalaman.Rasa.name)
+                })
+            }
+
             composable(route = PengelolaHalaman.Summary.name) {
                 HalamanDua(
                     orderUIState = uiState,
