@@ -2,7 +2,10 @@ package com.example.multiplepage.ui.theme.theme
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -27,18 +30,22 @@ fun HalamanPelanggan(
     var alamat by remember { mutableStateOf("") }
     var ListData: MutableList<String> = mutableListOf(nama, noTelp, alamat)
 
-    Column {
+    Column(modifier = Modifier.padding(10.dp)) {
         OutlinedTextField(value = nama,
             onValueChange = {nama =it},
-            label = { Text(text = "Nama") }
+            label = { Text(text = "Nama") },
+            modifier = Modifier.fillMaxWidth()
+
         )
         OutlinedTextField(value = noTelp,
             onValueChange = {noTelp =it},
-            label = { Text(text = "Telepon") }
+            label = { Text(text = "Telepon") },
+            modifier = Modifier.fillMaxWidth()
         )
         OutlinedTextField(value = alamat,
             onValueChange = {alamat =it},
-            label = { Text(text = "Alamat") }
+            label = { Text(text = "Alamat") },
+            modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {onSubmitButtonClicked(ListData)}) {
