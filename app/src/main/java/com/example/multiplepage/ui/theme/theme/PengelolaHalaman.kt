@@ -101,7 +101,11 @@ fun EsJumboApp(
                 HalamanPelanggan(onSubmitButtonClicked = {
                     viewModel.setContact(it)
                     navController.navigate(PengelolaHalaman.Rasa.name)
-                })
+                },
+                        onCancelButtonClicked = {
+                    navController.navigate(PengelolaHalaman.Home.name)
+                },
+                )
             }
 
             composable(route = PengelolaHalaman.Summary.name) {

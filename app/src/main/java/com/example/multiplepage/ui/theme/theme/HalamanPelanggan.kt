@@ -1,6 +1,7 @@
 package com.example.multiplepage.ui.theme.theme
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -8,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,6 +26,7 @@ import com.example.multiplepage.R
 @Composable
 fun HalamanPelanggan(
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onCancelButtonClicked: () -> Unit,
 ){
     var nama by remember { mutableStateOf("") }
     var noTelp by remember { mutableStateOf("") }
@@ -48,8 +51,13 @@ fun HalamanPelanggan(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = {onSubmitButtonClicked(ListData)}) {
-            Text(stringResource(id = R.string.btn_submit))
+        Row {
+            OutlinedButton(modifier = Modifier.weight(1f),onClick = onCancelButtonClicked) {
+                Text(text = stringResource(R.string.cancel))
+            }
+            Button(onClick = {onSubmitButtonClicked(ListData)}) {
+                Text(stringResource(id = R.string.btn_submit))
+            }
         }
     }
 }
