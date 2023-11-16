@@ -1,5 +1,6 @@
 package com.example.multiplepage.ui.theme.theme
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +18,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.multiplepage.R
@@ -51,11 +54,20 @@ fun HalamanPelanggan(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(30.dp))
-        Row() {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(R.dimen.padding_medium))
+                .weight(1f, false),
+            horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
+            verticalAlignment = Alignment.Bottom
+        ) {
             OutlinedButton(modifier = Modifier.weight(1f),onClick = onCancelButtonClicked) {
                 Text(text = stringResource(R.string.cancel))
             }
-            Button(onClick = {onSubmitButtonClicked(ListData)}) {
+            Button(
+                modifier = Modifier.weight(1f),
+                onClick = {onSubmitButtonClicked(ListData)}) {
                 Text(stringResource(id = R.string.btn_submit))
             }
         }
