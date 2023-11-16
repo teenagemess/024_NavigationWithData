@@ -28,13 +28,12 @@ import com.example.multiplepage.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanPelanggan(
-    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onSubmitButtonClicked: (String, String, String) -> Unit,
     onCancelButtonClicked: () -> Unit,
 ){
     var nama by remember { mutableStateOf("") }
     var noTelp by remember { mutableStateOf("") }
     var alamat by remember { mutableStateOf("") }
-    var ListData: MutableList<String> = mutableListOf(nama, noTelp, alamat)
 
     Column(modifier = Modifier.padding(10.dp)) {
         OutlinedTextField(value = nama,
@@ -67,8 +66,13 @@ fun HalamanPelanggan(
             }
             Button(
                 modifier = Modifier.weight(1f),
-                onClick = {onSubmitButtonClicked(ListData)}) {
-                Text(stringResource(id = R.string.btn_submit))
+                onClick = {
+                    if (nama.isNotEmpty() && noTelp.isNotEmpty() && alamat.isNotEmpty()) {
+                        onSubmitButtonClicked(nama, noTelp, alamat)
+                    }
+                }
+            ) {
+                Text(text = "Next")
             }
         }
     }

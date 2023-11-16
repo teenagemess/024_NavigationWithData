@@ -98,8 +98,8 @@ fun EsJumboApp(
             }
 
             composable(PengelolaHalaman.Pelanggan.name) {
-                HalamanPelanggan(onSubmitButtonClicked = {
-                    viewModel.setContact(it)
+                HalamanPelanggan(onSubmitButtonClicked = { nama, noTelp, alamat ->
+                    viewModel.setContact(nama, noTelp, alamat)
                     navController.navigate(PengelolaHalaman.Rasa.name)
                 },
                         onCancelButtonClicked = {
